@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/urfave/cli/v2"
+	cli "github.com/urfave/cli/v2"
 	"go.uber.org/zap"
 )
 
@@ -27,6 +27,18 @@ func main() {
 				Aliases: []string{"i"},
 				Usage:   "Initializes a pandora's box",
 				Action:  h.initBox,
+			},
+			{
+				Name:    "lock",
+				Aliases: []string{"l"},
+				Usage:   "Lock's the pandora's box",
+				Action:  h.LockBox,
+			},
+			{
+				Name:    "add",
+				Aliases: []string{"a"},
+				Usage:   "Add a file to pandora's box",
+				Action:  h.AddToBox,
 			},
 		},
 	}
